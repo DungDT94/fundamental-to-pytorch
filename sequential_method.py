@@ -50,3 +50,9 @@ print(end - start)
 
 val = [[1,2],[10, 11], [1.5, 2.5]]
 print(model(torch.tensor(val).float().to(device))) 
+
+
+print(model.state_dict())
+#torch.save(model.state_dict(), 'mymodel.pth') #luu model voi weigght and bias 
+torch.save(model.to('cpu').state_dict(),'mymodel.pth' )
+
